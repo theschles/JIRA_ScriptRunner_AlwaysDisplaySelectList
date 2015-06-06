@@ -11,7 +11,19 @@ Steps to install:
   * The exact name of the custom Select List field
   * The ID # of the scripted field
 7. In JIRA: configure the scripted field to use these files by going to Administration > Addons > Scripted Fields.  Click the Edit link for the scripted field you’ve created.  Put in the script field the /path/to/configurationScript.groovy (or D:\path\to\configurationScript.groovy).  Set the output to be HTML.  Click the Update button.
-  * Note that if you click the Preview button with an issue, if you change the value, the screen will refresh and your settings will be lost at this point.  So: click Update first, then go back and Preview.
+  * Note that if you click the Preview button with an issue and then change the value of the generated drop-down, the screen will refresh and your settings will be lost at this point (it will also alter the value of that issue's custom select list field).  So: click Update first, then go back and Preview.
 8. If all works well, add the custom Select List field and scripted field to the “Default” screen.
+
+Background:
+
+About 11 years ago, Atlassian made the decision that JIRA would not display custom fields on the issue view screen if those custom fields had no set value / were empty. The only way to force a custom field to always display on the issue view screen was to set it to required and then force a default value.
+
+One problem with setting a custom field to be required in JIRA is that it breaks Crucible / JIRA integration for custom Select List fields: errors are displayed when creating an issue in-line in Crucible and if those errors are ignored, there is a risk that JIRA might create orphan subtasks with no parent task attached.
+
+For the past 11 years, JIRA users and administrators have been clamouring for Atlassian to change this situation; so far, Atlassian has put other features as higher priority to people's chagrin even though over 150 people voted for a fix on Atlassian's own JIRA tracker.
+
+We ourselves discovered this situation at my company recently -- and it appeared no one as of yet had published a comprehensive solution. I wrote -- and then got company approval to open-source -- the above-linked mix of Groovy and JavaScript code that creates a ScriptRunner scripted field that, given a specified custom Select List field, will masquerade as that specified custom Select List field when that specified custom Select List field has no set value / is empty.
+
+The ScriptRunner plugin for JIRA is free via the Atlassian Marketplace and this code is open-source. Please try this out and suggest improvements via the GitHub system.
 
 Good luck!
