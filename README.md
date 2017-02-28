@@ -15,8 +15,7 @@ Steps to install:
 8. If all works well, add the custom Select List field and scripted field to the “Default” screen.
 
 Background:
-
-About 11 years ago, Atlassian made the decision that JIRA would not display custom fields on the issue view screen if those custom fields had no set value / were empty. The only way to force a custom field to always display on the issue view screen was to set it to required and then force a default value.
+In 2004 -- see https://jira.atlassian.com/browse/JRA-2997 -- Atlassian made the decision that JIRA would not display custom fields on the issue view screen if those custom fields had no set value / were empty. The only way to force a custom field to always display on the issue view screen was to set it to required and then force a default value.
 
 One problem with setting a custom field to be required in JIRA is that it breaks Crucible / JIRA integration for custom Select List fields: errors are displayed when creating an issue in-line in Crucible and if those errors are ignored, there is a risk that JIRA might create orphan subtasks with no parent task attached.
 
