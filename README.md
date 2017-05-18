@@ -23,6 +23,6 @@ For the past 11 years, JIRA users and administrators have been clamouring for At
 
 We ourselves discovered this situation at my company recently -- and it appeared no one as of yet had published a comprehensive solution. I wrote -- and then got company approval to open-source -- the above-linked mix of Groovy and JavaScript code that creates a ScriptRunner scripted field that, given a specified custom Select List field, will masquerade as that specified custom Select List field when that specified custom Select List field has no set value / is empty.
 
-The ScriptRunner plugin for JIRA is free via the Atlassian Marketplace and this code is open-source. Please try this out and suggest improvements via the GitHub system.
+The [ScriptRunner plugin for JIRA|https://marketplace.atlassian.com/plugins/com.onresolve.jira.groovy.groovyrunner/cloud/overview] is available via the Atlassian Marketplace and this code is open-source. Please try this out and suggest improvements via the GitHub system.
 
 Good luck!
